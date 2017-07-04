@@ -30,6 +30,7 @@ text-overflow 使用何种符号标示还有未显示的文本
 float属性只对本元素以及之后的元素请作用，不对之前的元素起作用。
 float只对块级元素起作用
 原本块级元素要独占height(即：content+padding+margin)高度的行，属性设置为`float： left；`之后,元素往左侧`<body>`边框位置靠拢（当然 设置的margin padding还是起作用），自然右侧就会出现空白空间。
-后续元素会按照它们原本的显示方式 浮动到 右边空白处，直到`width`或`height`占满。
+后续元素会按照它们原本的显示方式 浮动到 右边空白处,**紧靠** 左侧元素，直到`width`或`height`占满。
+所谓紧靠是指 左侧的元素`margin`属性依旧起作用，随后的元素`content`贴紧在左侧元素`margin`处。也就是说就随其后的元素`padding`和`margin`属性不再其作用了。
 如果后续元素不想受到前边元素的`float`属性影响，可以使用`clear：[both|left|right]`清除。
 ![This](media/float-example.png) This is a instruction image.
